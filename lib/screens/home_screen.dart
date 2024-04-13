@@ -1,4 +1,5 @@
 import 'package:arithmania_frontend/auth/login_screen.dart';
+import 'package:arithmania_frontend/screens/spendings_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '/screens/chat_screen.dart';
@@ -86,6 +87,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     child: Text(
                       'Investments',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SpendingsPage()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.green[800],
+                    ),
+                    child: Text(
+                      'Spendings',
                       style: TextStyle(
                         color: Colors.black,
                       ),

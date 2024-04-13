@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:arithmania_frontend/screens/speech_recognition.dart';
 import 'package:arithmania_frontend/widgets/filled_text_field.dart';
 import 'package:arithmania_frontend/widgets/message_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Message {
@@ -144,6 +145,8 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   void _sendMessage() {
+    // print("UserID");
+    // print(FirebaseAuth.instance.currentUser!.uid);
     String messageText = _messageController.text.trim();
     if (messageText.isNotEmpty) {
       setState(() {
