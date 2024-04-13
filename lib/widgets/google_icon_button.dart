@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
 
-class AuthIconButton extends StatefulWidget {
+class GoogleIconButton extends StatefulWidget {
   final String labelText;
-  final dynamic icon;
-  final bool isSvg;
+  final String imagePath;
   final VoidCallback onPress;
 
-  const AuthIconButton({
+  const GoogleIconButton({
     super.key,
     required this.labelText,
-    required this.isSvg,
-    required this.icon,
+    required this.imagePath,
     required this.onPress,
   });
 
   @override
-  State<AuthIconButton> createState() => _AuthIconButtonState();
+  State<GoogleIconButton> createState() => _GoogleIconButtonState();
 }
 
-class _AuthIconButtonState extends State<AuthIconButton> {
+class _GoogleIconButtonState extends State<GoogleIconButton> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -28,26 +26,24 @@ class _AuthIconButtonState extends State<AuthIconButton> {
       height: 60,
       child: ElevatedButton.icon(
         style: ButtonStyle(
-          shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(25.0),
               side: const BorderSide(color: Colors.black, width: 2),
             ),
           ),
-          backgroundColor: MaterialStatePropertyAll(Colors.grey.shade200),
-          shadowColor: const MaterialStatePropertyAll(Colors.transparent),
-          side: const MaterialStatePropertyAll(
-            BorderSide(color: Colors.black),
+          backgroundColor: MaterialStateProperty.all(Colors.grey.shade200),
+          shadowColor: MaterialStateProperty.all(Colors.transparent),
+          side: MaterialStateProperty.all(
+            const BorderSide(color: Colors.black),
           ),
         ),
         onPressed: widget.onPress,
-        icon: widget.isSvg
-            ? widget.icon
-            : Icon(
-                widget.icon,
-                color: Colors.black,
-                size: 30,
-              ),
+        icon: Image.asset(
+          widget.imagePath,
+          width: 30, // Adjust the width as needed
+          height: 30, // Adjust the height as needed
+        ),
         label: Padding(
           padding: const EdgeInsets.only(left: 7.0),
           child: Text(

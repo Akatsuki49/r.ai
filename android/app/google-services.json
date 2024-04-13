@@ -12,7 +12,20 @@
           "package_name": "com.example.arithmania_frontend"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "596387925054-0kpjvo2oktrq09j24i88jbpjklgkgl4s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.arithmania_frontend",
+            "certificate_hash": "d223151f4376a7159a7752f430be24726bcffae6"
+          }
+        },
+        {
+          "client_id": "596387925054-30t0jmqdoqclccov2h9jkk0vekv3bjca.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDP3WLpxxaOMWv9HWqqatPheoQA_rZ1KuI"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596387925054-30t0jmqdoqclccov2h9jkk0vekv3bjca.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "596387925054-7hg1gu62tvi2n1tgpstjd8as2jvql4o4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.arithmaniaFrontend.RunnerTests"
+              }
+            }
+          ]
         }
       }
     }

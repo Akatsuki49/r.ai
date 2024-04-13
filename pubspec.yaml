@@ -40,6 +40,10 @@ dependencies:
   avatar_glow: ^3.0.1
   highlight_text: ^1.7.0
   speech_to_text: ^6.6.1
+  firebase_auth: ^4.19.1
+  provider: ^6.1.2
+  cloud_firestore: ^4.16.1
+  google_sign_in: ^6.2.1
 
 dev_dependencies:
   flutter_test:

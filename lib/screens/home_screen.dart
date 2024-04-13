@@ -1,3 +1,5 @@
+import 'package:arithmania_frontend/auth/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '/screens/chat_screen.dart';
 import '/screens/investment_screen.dart';
@@ -14,6 +16,19 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text('Finance App'),
         backgroundColor: Colors.blue[800],
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () async {
+              // Implement logout functionality here
+              FirebaseAuth.instance.signOut();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
+              );
+            },
+          ),
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
