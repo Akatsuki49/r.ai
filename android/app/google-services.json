@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "596387925054",
+    "project_id": "arithmania2024",
+    "storage_bucket": "arithmania2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596387925054:android:199e2a5bf9ce29c4a5956f",
+        "android_client_info": {
+          "package_name": "com.example.arithmania_frontend"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDP3WLpxxaOMWv9HWqqatPheoQA_rZ1KuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
