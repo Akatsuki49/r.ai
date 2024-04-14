@@ -1,5 +1,6 @@
 import 'package:arithmania_frontend/auth/login_screen.dart';
 import 'package:arithmania_frontend/screens/speech_recognition.dart';
+import 'package:arithmania_frontend/screens/spendings_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart';
@@ -215,6 +216,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: FloatingActionButton(
                   onPressed: () {
                     // Add functionality for the wallet button here
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SpendingsPage()));
                   },
                   backgroundColor: Colors.brown[400],
                   foregroundColor: Colors.white,
