@@ -1,7 +1,19 @@
+import 'package:arithmania_frontend/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import './login_page2.dart';
+import '/auth/firebase_auth_methods.dart';
 
-class LoginPage1 extends StatelessWidget {
+class LoginPage1 extends StatefulWidget {
+  @override
+  State<LoginPage1> createState() => _LoginPage1State();
+}
+
+class _LoginPage1State extends State<LoginPage1> {
+  void onGoogleSignIn() async {
+    context.read<FirebaseAuthMethods>().signInWithGoogle(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,9 +21,14 @@ class LoginPage1 extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 402),
+          Image.asset(
+            'assets/images/starbuckslogo2.png',
+            height: 352,
+            fit: BoxFit.cover,
+          ),
+
           const Padding(
-            padding: EdgeInsets.only(left: 16),
+            padding: EdgeInsets.only(left: 16, top: 40),
             child: Text(
               'Welcome',
               style: TextStyle(
@@ -76,14 +93,27 @@ class LoginPage1 extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
-              child: const SizedBox(
-                width: double.infinity,
-                child: Text(
-                  'Continue with Google',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: Colors.black, // Change the text color to black
+              child: GestureDetector(
+                onTap: () => onGoogleSignIn(),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset('assets/images/Google__G__logo 1.png',
+                          height: 24),
+                      SizedBox(
+                          width:
+                              10), // Add some space between the image and text
+                      Text(
+                        'Continue with Google',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black, // Change the text color to black
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -96,7 +126,7 @@ class LoginPage1 extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage2()),
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
                 );
               },
               style: ElevatedButton.styleFrom(

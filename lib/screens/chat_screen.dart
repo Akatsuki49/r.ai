@@ -46,10 +46,7 @@ class _ChatPageState extends State<ChatPage> {
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomCenter,
-                      colors: [
-                        Color(0xFF1E1E1E),
-                        Color(0xFF2D2D2D),
-                      ],
+                      colors: [Colors.black, Colors.black],
                     ),
                   ),
                   child: Column(
