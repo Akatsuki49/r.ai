@@ -1,8 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 import 'package:arithmania_frontend/auth/login_email_screen.dart';
 import 'package:arithmania_frontend/auth/signup_screen.dart';
-import 'package:arithmania_frontend/screens/get_started.dart';
 import 'package:arithmania_frontend/screens/home_screen.dart';
+import 'package:arithmania_frontend/welcomepage.dart';
 import 'package:arithmania_frontend/widgets/snack_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -107,7 +107,7 @@ class FirebaseAuthMethods {
       Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(
           builder: (context) {
-            return const GetStarted();
+            return WelcomePage();
           },
         ),
         (route) => false,

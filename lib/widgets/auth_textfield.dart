@@ -19,6 +19,7 @@ class AuthTextField extends StatelessWidget {
         controller: controller,
         keyboardType: textInputType,
         decoration: InputDecoration(
+          fillColor: Colors.white,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25),
           ),

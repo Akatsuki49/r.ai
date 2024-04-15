@@ -231,6 +231,79 @@ class _SpendingsPageState extends State<SpendingsPage> {
     );
   }
 
+  // void _addTransaction() {
+  //   // Parse amount as double
+  //   String txt = _amountController.text;
+  //   String type = "";
+  //   if (txt[0] == '-' || txt[0] == '.') {
+  //     type = 'expense';
+  //   } else {
+  //     type = 'income';
+  //   }
+  //   double amount = double.parse(_amountController.text);
+  //   // Make amount positive for backend request
+  //   double absoluteAmount = amount.abs();
+
+  //   FirebaseFirestore.instance
+  //       .collection('users')
+  //       .doc(FirebaseAuth.instance.currentUser!.uid)
+  //       .collection('transactions')
+  //       .add({
+  //     "amount": amount,
+  //     "type": type,
+  //     "category": _categoryController.text,
+  //     "description": "Added manually",
+  //     "timestamp": DateTime.now(),
+  //   }).then((value) {
+  //     // Show success dialog
+  //     showDialog(
+  //       context: context,
+  //       builder: (BuildContext context) {
+  //         return AlertDialog(
+  //           title: Text('Success'),
+  //           content: Text('Transaction added successfully.'),
+  //           actions: <Widget>[
+  //             TextButton(
+  //               onPressed: () {
+  //                 Navigator.of(context).pop();
+  //               },
+  //               child: Text('OK'),
+  //             ),
+  //           ],
+  //         );
+  //       },
+  //     );
+  //     print('Transaction added successfully.');
+
+  //     // Prepare data to send to the backend endpoint
+  //     Map<String, dynamic> requestData = {
+  //       "user_id": FirebaseAuth.instance.currentUser!.uid,
+  //       "amount": absoluteAmount, // Sending positive amount to backend
+  //       "type": type,
+  //       "category": _categoryController.text,
+  //       "description": "Added manually",
+  //     };
+
+  //     // Send POST request to the backend endpoint
+  //     http
+  //         .post(
+  //             Uri.parse(
+  //                 'https://b825-104-28-252-172.ngrok-free.app/update_transactions'),
+  //             body: requestData)
+  //         .then((response) {
+  //       if (response.statusCode == 200) {
+  //         print('Transaction data sent to the backend successfully.');
+  //       } else {
+  //         print(
+  //             'Failed to send transaction data to the backend. Status code: ${response.statusCode}');
+  //       }
+  //     }).catchError((error) {
+  //       print('Error sending transaction data to the backend: $error');
+  //     });
+  //   }).catchError((error) {
+  //     print('Error adding transaction: $error');
+  //   });
+  // }
   void _addTransaction() {
     FirebaseFirestore.instance
         .collection('users')

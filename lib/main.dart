@@ -1,6 +1,6 @@
 import 'package:arithmania_frontend/auth/firebase_auth_methods.dart';
 import 'package:arithmania_frontend/firebase_options.dart';
-import 'package:arithmania_frontend/screens/get_started.dart';
+import 'package:arithmania_frontend/welcomepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
               // return const WhoReading(); // If user is logged in, show home screen
               return HomeScreen();
             } else {
-              return const GetStarted(); // If user is not logged in, show login screen
+              return WelcomePage(); // If user is not logged in, show login screen
             }
           },
         ),
