@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:highlight_text/highlight_text.dart';
@@ -61,14 +62,14 @@ class _SpeechScreenState extends State<SpeechScreen> {
   double _confidence = 1.0;
   double _buttonPosition = 0.6;
   String _backendResponse = '';
+  FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<String> sendTextToBackend(String text) async {
     try {
-      var url = Uri.parse(
-          'https://683d-2402-8100-2685-fea1-f82a-c110-748b-24d1.ngrok-free.app/answer-gen');
+      var url = Uri.parse('https://b825-104-28-252-172.ngrok-free.app/query');
       var response = await http.post(
         url,
-        body: {'text': text},
+        body: {'text': text, 'user_id': _auth.currentUser!.uid},
       );
 
       if (response.statusCode == 200) {
@@ -241,28 +242,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-//   void _listen() async {
-//     if (!_isListening) {
-//       bool available = await _speech.initialize(
-//         onStatus: (val) => print('onStatus: $val'),
-//         onError: (val) => print('onError: $val'),
-//       );
-//       if (available) {
-//         setState(() => _isListening = true);
-//         _speech.listen(
-//           onResult: (val) => setState(() {
-//             _text = val.recognizedWords;
-//             if (val.hasConfidenceRating && val.confidence > 0) {
-//               _confidence = val.confidence;
-//             }
-//           }),
-//         );
-//       }
-//     } else {
-//       setState(() => _isListening = false);
-//       _speech.stop();
-//     }
-//   }
-// }

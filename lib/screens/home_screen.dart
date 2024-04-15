@@ -1,4 +1,4 @@
-import 'package:arithmania_frontend/auth/login_screen.dart';
+import 'package:arithmania_frontend/login_page1.dart';
 import 'package:arithmania_frontend/screens/speech_recognition.dart';
 import 'package:arithmania_frontend/screens/spendings_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -126,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
               FirebaseAuth.instance.signOut();
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const LoginScreen()),
+                MaterialPageRoute(builder: (context) => LoginPage1()),
               );
             },
           ),
